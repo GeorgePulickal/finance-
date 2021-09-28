@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <form action="/history" method="get">
+        <div class="section">
+
+                <h2>History</h2>
+                <table class="styled-table" style="margin-left: auto; margin-right: auto;">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Symbol</th>
+                            <th>Buy/Sell</th>
+                            <th>Shares</th>
+                            <th>Price</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transaction in transactions %}
+                            <tr>
+                                <td>{{ transaction.name }}</td>
+                                <td>{{ transaction.symbol }}</td>
+                                <td>{{ transaction.type }}</td>
+                                <td>{{ transaction.shares }}</td>
+                                <td>£{{ transaction.price }}</td>
+                                <td>{{ transaction.timestamp }}</td>
+                            </tr>
+                        {% endfor %}
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                    </tbody>
+                </table>
+            </div>
+    </form>
+{% endblock %}

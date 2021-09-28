@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="container">
+            <h2>Quote</h2>
+                <table class="styled-table" style="margin-left: auto; margin-right: auto;">
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Company Symbol</th>
+                            <th>Stock Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>{{ price['name'] }}</td>
+                                <td>{{ price['symbol'] }}</td>
+                                <td>£{{ price['price'] }}</td>
+                            </tr>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                    </tbody>
+                </table>
+        </div>
+    </form>
+{% endblock %}

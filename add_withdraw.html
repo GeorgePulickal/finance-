@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add/Withdraw
+{% endblock %}
+
+{% block main %}
+    <form action="/add-withdraw" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="value" placeholder="Value" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add/Withdraw</button>
+    </form>
+{% endblock %}
